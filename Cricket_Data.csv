@@ -1,0 +1,7 @@
+ball,non_striker,bowler,runs_extras,runs_total,runs_batsman,batsman,is_out
+29.1,JL Smith,B Doggett,0,1,1,HC Brook,False
+29.2,HC Brook,B Doggett,0,3,3,JL Smith,False
+29.3,JL Smith,B Doggett,0,1,1,HC Brook,False
+29.4,HC Brook,B Doggett,0,3,3,JL Smith,False
+29.5,JL Smith,B Doggett,0,0,0,HC Brook,True
+29.6,JL Smith,B Doggett,0,1,1,AAP Atkinson,False

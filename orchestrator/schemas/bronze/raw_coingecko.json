@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bronze Crypto Prices",
+  "description": "Raw 5-minute cryptocurrency market data with metadata",
+  "type": "object",
+  "properties": {
+    "coin_id": {
+      "type": "string",
+      "description": "Coin identifier (e.g., bitcoin)"
+    },
+    "timestamp_ms": {
+      "type": "integer",
+      "description": "Unix timestamp in milliseconds"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in USD"
+    },
+    "market_cap": {
+      "type": "number",
+      "description": "Market capitalization in USD"
+    },
+    "volume": {
+      "type": "number",
+      "description": "24h trading volume in USD"
+    },
+    "_ingested_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp when data was ingested"
+    },
+    "_processing_date": {
+      "type": "string",
+      "description": "Airflow logical date (YYYY-MM-DD)"
+    },
+    "_airflow_run_id": {
+      "type": "string",
+      "description": "Airflow run identifier for audit"
+    }
+  },
+  "required": ["coin_id", "timestamp_ms", "price", "market_cap", "volume"]
+}

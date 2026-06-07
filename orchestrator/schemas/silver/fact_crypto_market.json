@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Silver Fact Crypto Markets",
+  "description": "Cleaned, deduplicated cryptocurrency market data",
+  "type": "object",
+  "properties": {
+    "coin_id": {
+      "type": "string"
+    },
+    "timestamp_ms": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "market_cap": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number"
+    },
+    "_ingested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "_processing_date": {
+      "type": "string"
+    }
+  },
+  "required": ["coin_id", "timestamp_ms", "price", "market_cap", "volume"]
+}
