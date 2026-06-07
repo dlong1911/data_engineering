@@ -1,0 +1,28 @@
+pipeline:
+  name: "coingecko_5min_ingest"
+  description: "Daily 5-minute cryptocurrency market data ingestion"
+
+api:
+  base_url: "https://api.coingecko.com/api/v3"
+  coins: ["bitcoin", "ethereum", "binancecoin", "solana"]
+  params:
+    vs_currency: "usd"
+    days: 1
+  rate_limit_seconds: 5
+  timeout_seconds: 30
+
+storage:
+  base_path: "/opt/airflow/data"
+  watermark_table: "control/etl_watermarks"
+  bronze_table: "bronze/crypto_prices"
+  silver_table: "silver/fact_crypto_markets"
+
+quality:
+  checks:
+    - name: "no_nulls"
+      columns: ["price", "market_cap", "volume"]
+      enabled: true
+    - name: "positive_price"
+      enabled: true
+    - name: "valid_timestamp"
+      enabled: true

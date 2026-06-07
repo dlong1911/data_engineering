@@ -1,0 +1,35 @@
+[project]
+name = "crypto-etl-framework"
+version = "1.0.0"
+description = "Enterprise ETL framework for cryptocurrency market data"
+requires-python = ">=3.11"
+
+dependencies = [
+    "polars>=0.20.0",
+    "deltalake>=0.15.0",
+    "requests>=2.31.0",
+    "apache-airflow>=2.8.0",
+    "pyarrow>=14.0.0",
+    "pyyaml>=6.0",
+    "jsonschema>=4.20.0",
+    "pytest>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
